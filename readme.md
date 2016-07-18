@@ -1,4 +1,3 @@
-*principal proyect
 
 # Github Score
 
