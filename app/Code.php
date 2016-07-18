@@ -11,4 +11,9 @@ class Code extends Model
     protected $fillable = [
         'lenguaje','user_id',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

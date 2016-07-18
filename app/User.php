@@ -22,4 +22,14 @@ class User extends Authenticatable
     protected $hidden = [
         'remember_token',
     ];
+
+    public function profiles()
+    {
+        return $this->belongsTo('App\Profile');
+    }
+
+    public function codes()
+    {
+        return $this->belongsToMany('App\Code');
+    }
 }
