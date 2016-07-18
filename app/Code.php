@@ -12,8 +12,8 @@ class Code extends Model
         'lenguaje','user_id',
     ];
 
-    public function users()
+    /*public function users()
     {
         return $this->belongsToMany('App\User')->withTimestamps();
-    }
+    }*/
 }

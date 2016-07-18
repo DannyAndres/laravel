@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('form');
+Route::get('/', [
+    'uses'  =>  'Controller@form'
+]);
+
+Route::post('home', [
+    'uses'  =>  'Controller@view'
+]);
+
+Route::get('ranking', function () {
+    return view('ranking');
 });

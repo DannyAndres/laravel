@@ -48,6 +48,9 @@ input:not(.botom){
     opacity: 0.5; 
     color: white;
 }
+#color{
+    color:white;
+}
 .info{
     color:white;
     font-size: 20px;
