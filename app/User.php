@@ -14,8 +14,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /*public function codes()
+    public function codes()
     {
-        return $this->belongsToMany('App\Code');
-    }*/
+        return $this->hasOne(Score::Code);
+    }
 }

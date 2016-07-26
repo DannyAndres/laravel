@@ -24,8 +24,8 @@ class Controller extends BaseController
 
         $request = new Request();
 
-        $username = request()->data->username;
-        $username2 = request()->data->username2;
+        $username = Flight::request()->data->username;
+        $username2 = Flight::request()->data->username2;
 
         try {
             $user = $request->getUser($username);

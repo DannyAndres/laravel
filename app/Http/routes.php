@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', [
+Route::resource('index', 'IndexController');
+
+/*Route::get('/', [
     'uses'  =>  'Controller@form'
 ]);
+
+Route::get('battle', 'battle@battle');
 
 Route::post('home', [
     'uses'  =>  'Controller@view'
@@ -21,4 +25,4 @@ Route::post('home', [
 
 Route::get('ranking', function () {
     return view('ranking');
-});
+});*/
