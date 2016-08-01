@@ -52,7 +52,6 @@
                     <h4>proximamente</h4>
                     <h2><i class="fa fa-frown-o" aria-hidden="true"></i></h2>
                 </div>
-            </div>
 
         </section>
 

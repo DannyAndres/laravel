@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http;
 
-use Illuminate\Foundation\Http\FormRequest;
+use GuzzleHttp\Client;
 
-abstract class Request extends FormRequest
+class Requests
 {
     private $client;
 
@@ -15,21 +15,21 @@ abstract class Request extends FormRequest
 
     public function getUser($username)
     {
-        return $this->get('https://api.github.com/users/' . $username)
+        return $this->client->get('https://api.github.com/users/' . $username)
          ->getBody()
          ->getContents();
     }
 
     public function getEvents($username)
     {
-        return $this->get('https://api.github.com/users/' . $username . '/events')
+        return $this->client->get('https://api.github.com/users/' . $username . '/events')
             ->getBody()
             ->getContents();
     }
 
     public function getRepos($username)
     {
-        return $this->get('https://api.github.com/users/' . $username . '/repos')
+        return $this->client->get('https://api.github.com/users/' . $username . '/repos')
             ->getBody()
             ->getContents();
     }
@@ -37,7 +37,9 @@ abstract class Request extends FormRequest
     private function get($url)
     {
         return $this->client->request('GET', $url, [
-            'auth' => ['dannyandres', getenv('GITHUB_PASSWORD')]
-        ]);
+            'auth' => ['dannyandres', env('GITHUB_PASSWORD')]
+        ])
+            ->getBody()
+            ->getContents();
     }
 }

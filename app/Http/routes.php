@@ -11,18 +11,10 @@
 |
 */
 
-Route::resource('index', 'IndexController');
+Route::get('/', function () {
+    return view('/form');
+});
 
-/*Route::get('/', [
-    'uses'  =>  'Controller@form'
-]);
+Route::post('/score', 'ScoreController@store');
 
-Route::get('battle', 'battle@battle');
-
-Route::post('home', [
-    'uses'  =>  'Controller@view'
-]);
-
-Route::get('ranking', function () {
-    return view('ranking');
-});*/
+Route::get('/ranking', 'ScoreController@index');

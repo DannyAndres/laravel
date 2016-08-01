@@ -16,8 +16,8 @@ class Codes extends Migration
             $table->increments('id');
             $table->string('lenguage');
             $table->string('url');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('score_id')->unsigned();
+            $table->foreign('score_id')->references('id')->on('scores')->onDelete('cascade');
             $table->timestamps();
         });
     }

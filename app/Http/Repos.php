@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http;
 
-use App\Http\Requests\Request;
+use GuzzleHttp\Client;
+use Illuminate\Database\Eloquent\Model;
 
-class Repos extends Request
+class Repos extends Model
 {
     private $stars;
     public $star_count;

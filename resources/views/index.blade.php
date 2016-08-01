@@ -12,7 +12,7 @@
         <!--css-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
-        <script src="https://use.fontawesome.com/5e5d208601.js"></script>
+        <!--<script src="https://use.fontawesome.com/5e5d208601.js"></script>-->
         <link rel="stylesheet" href="css/form.css">
 
         <!--background-->

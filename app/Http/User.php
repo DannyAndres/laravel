@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http;
 
-use App\Http\Requests\Request;
+use GuzzleHttp\Client;
+use Illuminate\Database\Eloquent\Model;
+use App\Request;
 
-class User extends Request
+class User extends Model
 {
     private $user;
 
@@ -47,4 +49,4 @@ class User extends Request
     {
         return $this->user->avatar_url;
     }
-}
+}   

@@ -12,12 +12,8 @@
         <!--css-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
-        <!--<script src="{{ asset ('css/font-awesome.min.css') }}"></script>-->
         <link rel="stylesheet" href="css/form.css">
         <link rel="stylesheet" href="{{ asset ('css/font-awesome.min.css') }}">
-
-        <!--background-->
-
 
     </head>
     <body>
@@ -42,15 +38,16 @@
             <div class="col-md-6 col-md-offset-3 container">
 
                 <!--TITULO-->
-                <h1 class="title quick">Github Score & Battle <i class="fa fa-shield" aria-hidden="true"></i> </h1>
+                <h1 class="title">Github Score & Battle <i class="fa fa-shield" aria-hidden="true"></i> </h1>
 
                 <!--FORMULARIO-->
-                <form action="./home" method="post" name="frm">    
+                <form action="./score" method="post" name="frm">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">    
                 <i class="fa fa-user icon" aria-hidden="true"></i>
-                <input placeholder="Primer Usuario" type="text" name="username" required/>
+                <input placeholder="Primer Usuario" type="text" name="username"/>
                 <br /><br />
                 <i class="fa fa-user icon" aria-hidden="true"></i>
-                <input placeholder="Segundo Usuario" type="text" name="username2" required/>
+                <input placeholder="Segundo Usuario" type="text" name="username2"/>
                 <br /><br />
                 <input class="botom" type="submit" name="Enviar" value="Listo!" class="boton"/>
                 </form>

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http;
 
-use App\Http\Requests\Request;
+use App\Request;
+use GuzzleHttp\Client;
+use Illuminate\Database\Eloquent\Model;
 
-class Events extends Request
+class Events extends Model
 {
     private $user;
     public $score;
