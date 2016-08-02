@@ -102,12 +102,50 @@ class ScoreController extends Controller
 
         if (!$error) {
             return view('score', [
+                //names
+                'username1' => $User->getUsername(),
+                'username2' => $User2->getUsername(),
+                //login
+                'login1' => $User->getUserlogin(),
+                'login2' => $User2->getUserlogin(),
+                //followers
+                'followers1' => $User->getUserfollowers(),
+                'followers2' => $User2->getUserfollowers(),
+                //following
+                'following1' => $User->getUserfollowing(),
+                'following2' => $User2->getUserfollowing(),
+                //stars
+                'stars1' => $User_repo->showStars(),
+                'stars2' => $User_repo2->showStars(),
+                //created
+                'created1' => $User->getUsercreated(),
+                'created2' => $User2->getUsercreated(),
+                //updated
+                'updated1' =>  $User->getUserupdated(),
+                'updated2' =>  $User2->getUserupdated(),
+                //push
+                'push1' => $eventos->showEventsPush(),
+                'push2' => $eventos2->showEventsPush(),
+                //create
+                'create1' => $eventos->showEventsCreate(),
+                'create2' => $eventos2->showEventsCreate(),
+                //issues
+                'issues1' => $eventos->showEventsIssues(),
+                'issues2' => $eventos2->showEventsIssues(),
+                //push
+                'push1' => $eventos->showEventsPush(),
+                'push2' => $eventos2->showEventsPush(),
+                //push
+                'push1' => $eventos->showEventsPush(),
+                'push2' => $eventos2->showEventsPush(),
+
                 'user1' => $User,
                 'user2' => $User2,
                 'events' => $eventos,
                 'events2' => $eventos2,
                 'repo' => $User_repo,
                 'repo2' => $User_repo2,
+                //finalscore
                 'finalScore1' => $finalScore,
                 'finalScore2' => $finalScore2
             ]);

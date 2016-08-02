@@ -47,7 +47,7 @@
                 <input placeholder="Primer Usuario" type="text" name="username"/>
                 <br /><br />
                 <i class="fa fa-user icon" aria-hidden="true"></i>
-                <input placeholder="Segundo Usuario" type="text" name="username2"/>
+                <input type="text" name="username2"/>
                 <br /><br />
                 <input class="botom" type="submit" name="Enviar" value="Listo!" class="boton"/>
                 </form>
