@@ -102,6 +102,9 @@ class ScoreController extends Controller
 
         if (!$error) {
             return view('score', [
+                //avatar
+                'image1' => $User->getUseravatar(),
+                'image2' => $User2->getUseravatar(),
                 //names
                 'username1' => $User->getUsername(),
                 'username2' => $User2->getUsername(),
@@ -132,19 +135,12 @@ class ScoreController extends Controller
                 //issues
                 'issues1' => $eventos->showEventsIssues(),
                 'issues2' => $eventos2->showEventsIssues(),
-                //push
-                'push1' => $eventos->showEventsPush(),
-                'push2' => $eventos2->showEventsPush(),
-                //push
-                'push1' => $eventos->showEventsPush(),
-                'push2' => $eventos2->showEventsPush(),
-
-                'user1' => $User,
-                'user2' => $User2,
-                'events' => $eventos,
-                'events2' => $eventos2,
-                'repo' => $User_repo,
-                'repo2' => $User_repo2,
+                //commit
+                'commit1' => $eventos->showEventsCommit(),
+                'commit2' => $eventos2->showEventsCommit(),
+                //other
+                'other1' => $eventos->showEventsOther(),
+                'other2' => $eventos2->showEventsOther(),
                 //finalscore
                 'finalScore1' => $finalScore,
                 'finalScore2' => $finalScore2

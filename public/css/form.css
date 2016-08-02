@@ -16,6 +16,10 @@ body {
     font-family: 'Lato';
 }
 
+#score{
+    color: white;
+}
+
 .container {
     text-align: center;
     display: table-cell;
