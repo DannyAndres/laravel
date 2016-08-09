@@ -12,7 +12,7 @@
         <!--css-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
-        <!--<script src="https://use.fontawesome.com/5e5d208601.js"></script>-->
+        <link rel="stylesheet" href="{{ asset ('css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="css/form.css">
 
         <!--background-->
@@ -36,22 +36,34 @@
 
         <section>
 
-            <div class="col-md-6 col-md-offset-3 container">
-
-                <!--TITULO-->
-                <h1 class="title"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                 Lo sentimos
-                 <i class="fa fa-wrench" aria-hidden="true"></i></h1>
-
-
-                <br>
-
-                <div class="info">
-                    <p>Aqui va el ranking </p>
-                    <p>el cual accede a la base de datos</p>
-                    <h4>proximamente</h4>
-                    <h2><i class="fa fa-frown-o" aria-hidden="true"></i></h2>
-                </div>
+            <div class="table-color">
+                    <div class="col-md-10 col-md-offset-1">
+                        <table class="table text-center table-bordered table-border">
+                            <thead>
+                                    <tr>
+                                        <th><h3 class="pacifico">_.Ranking._</h3></th>
+                                        <th><h3 class="pacifico">_.Username._</h3></th>
+                                        <th><h3 class="pacifico">__.Name.__</h3></th>
+                                        <th><h3 class="pacifico">_.Score._</h3></th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                     @for score as scoreData
+                                        <tr>
+                                            <td><p>{{ $ranking }}</p></td>
+                                            <td><p>{{score.getUserlogin}}</p></td>
+                                            {% if score.getUsername %}
+                                                <td><p>{{score.getUsername}}</p></td>
+                                            {% else %}
+                                                <td><p>Sin nombre</p></td>
+                                            {% endif %}
+                                            <td><p>{{score.getScore}}</p></td>
+                                            {%set ranking = ranking + 1%}
+                                        </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
             </div>
 
         </section>

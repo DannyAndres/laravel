@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Request;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
+use App\Repos;
 
 class Events extends Model
 {

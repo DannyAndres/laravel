@@ -17,7 +17,18 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        return view('ranking');
+        $score = Score::orderBy('score', 'DESC')
+            ->take(20)
+            ->get()
+            ->toArray();
+        $ranking = 1;
+
+        $inf = [
+            'scoreData' => $score,
+            'ranking' => $ranking,
+            'loginScore1' => score.getUserlogin(),
+        ];
+        return view('ranking', $inf);
     }
 
     /**

@@ -106,7 +106,7 @@
 
             <div class="winner-user-text pacifico">
                 <!--WINNER-->
-                @if (($finalScore1 > $finalScore2) || ($username1))
+                @if (($finalScore1 > $finalScore2) and ($username1))
                     <h1>El ganador es: <br>
                         {{ $username1 }}
                     </h1>&nbsp&nbsp&nbsp<i class="fa fa-hand-scissors-o" aria-hidden="true"></i> <i class="fa fa-check" aria-hidden="true"></i> <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
@@ -116,13 +116,10 @@
                         {{ $login1 }}
                     </h1>&nbsp&nbsp&nbsp<i class="fa fa-hand-scissors-o" aria-hidden="true"></i> <i class="fa fa-check" aria-hidden="true"></i> <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
 
-                @endif
-
-                @if ($finalScore1 == $finalScore2)
+                @elseif ($finalScore1 == $finalScore2)
                 <h1>EMPATE!!!!!</h1>&nbsp&nbsp&nbsp<i class="fa fa-hand-scissors-o" aria-hidden="true"></i> <i class="fa fa-check" aria-hidden="true"></i> <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
-                @endif
 
-                 @if (($finalScore1 < $finalScore2) || ($username2))
+                 @elseif (($finalScore1 < $finalScore2) and ($username2))
                     <h1>El ganador es: <br>
                         {{ $username2 }}
                     </h1>&nbsp&nbsp&nbsp<i class="fa fa-hand-scissors-o" aria-hidden="true"></i> <i class="fa fa-check" aria-hidden="true"></i> <i class="fa fa-hand-rock-o" aria-hidden="true"></i>

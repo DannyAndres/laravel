@@ -20,6 +20,13 @@ body {
     color: white;
 }
 
+.avatar{
+    border-radius: 25px;
+}
+.winner-user-text{
+    position: absolute; left: 40%; top: 60%; font-size: 40px; color: white;
+}
+
 .container {
     text-align: center;
     display: table-cell;

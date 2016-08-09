@@ -90,3 +90,19 @@
                 </h1>
                 &nbsp&nbsp&nbsp<i class="fa fa-hand-scissors-o" aria-hidden="true"></i> <i class="fa fa-check" aria-hidden="true"></i> <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
             </div>    
+
+
+
+
+
+
+
+
+                public static function page($lang = null, $pags = 10, $by = 'score')
+    {
+        return self::whereHas('Repos', function ($q) use ($lang) {
+            if ($lang) {
+                $q->where('lang', $lang);
+            }
+        })->with('Repos')->orderBy($by, 'desc')->paginate($pags);
+    }
