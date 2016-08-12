@@ -37,7 +37,7 @@ class Requests
     private function get($url)
     {
         return $this->client->request('GET', $url, [
-            'auth' => ['dannyandres', env('GITHUB_PASSWORD')]
+            'auth' => ['dannyandres', env('GITHUB_KEY')]
         ])
             ->getBody()
             ->getContents();

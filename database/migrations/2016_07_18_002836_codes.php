@@ -14,10 +14,11 @@ class Codes extends Migration
     {
         Schema::create('codes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('lenguage');
-            $table->string('url');
-            $table->integer('score_id')->unsigned();
-            $table->foreign('score_id')->references('id')->on('scores')->onDelete('cascade');
+            $table->text('url');
+            $table->integer('stars');
+            $table->string('code');
+            $table->string('lang');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

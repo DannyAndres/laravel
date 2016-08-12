@@ -38,31 +38,35 @@
 
             <div class="table-color">
                     <div class="col-md-10 col-md-offset-1">
-                        <table class="table text-center table-bordered table-border">
-                            <thead>
-                                    <tr>
-                                        <th><h3 class="pacifico">_.Ranking._</h3></th>
-                                        <th><h3 class="pacifico">_.Username._</h3></th>
-                                        <th><h3 class="pacifico">__.Name.__</h3></th>
-                                        <th><h3 class="pacifico">_.Score._</h3></th>
-                                    </tr>
-                            </thead>
-                            <tbody>
-                                     @for score as scoreData
-                                        <tr>
-                                            <td><p>{{ $ranking }}</p></td>
-                                            <td><p>{{score.getUserlogin}}</p></td>
-                                            {% if score.getUsername %}
-                                                <td><p>{{score.getUsername}}</p></td>
-                                            {% else %}
-                                                <td><p>Sin nombre</p></td>
-                                            {% endif %}
-                                            <td><p>{{score.getScore}}</p></td>
-                                            {%set ranking = ranking + 1%}
-                                        </tr>
-                                    @endfor
-                            </tbody>
+
+                        <div class="langs">
+                            <a href="ranking"><span>All</span></a>
+                            @foreach ($langs as $lang)
+                                <a href="ranking/{{ $lang->lang }}"><span>{{ $lang->lang }}</span></a>
+                            @endforeach
+                        </div><br>
+
+                        <table class="table">
+                            <tr>
+                                <td>Pos.</td>
+                                <td>Name</td>
+                                <td>Repo Name</td>
+                                <td>Languaje</td>
+                                <td>Stars</td>
+                                <td>Score</td>
+                            </tr>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td></td>
+                                    <td>{{ $user->name }}</td>
+                                    <td><a href="https://github.com/{{ $user->repository->url }}" >{{ $user->repository->url }}</a></td>
+                                    <td>{{ $user->repository->lang }}</td>
+                                    <td>{{ $user->repository->stars }}</td>
+                                    <td>{{ $user->score }}</td>
+                                </tr>
+                            @endforeach
                         </table>
+                        {{ $users->links() }}
                     </div>
             </div>
 

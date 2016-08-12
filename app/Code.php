@@ -9,11 +9,11 @@ class Code extends Model
     protected $table = "codes";
 
     protected $fillable = [
-        'lenguaje','user_id',
+        'url','stars','code','lang',
     ];
 
-    public function users()
+    public function score()
     {
-        return $this->belongsTo(Score::User)->withTimestamps();
+        return $this->belongsTo(App\Score::class);
     }
 }

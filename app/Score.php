@@ -14,8 +14,8 @@ class Score extends Authenticatable
         'remember_token',
     ];
 
-    public function codes()
+    public function code()
     {
-        return $this->hasOne(Score::Code);
+        return $this->hasOne(Code::class);
     }
 }

@@ -15,20 +15,11 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang = null)
     {
-        $score = Score::orderBy('score', 'DESC')
-            ->take(20)
-            ->get()
-            ->toArray();
-        $ranking = 1;
-
-        $inf = [
-            'scoreData' => $score,
-            'ranking' => $ranking,
-            'loginScore1' => score.getUserlogin(),
-        ];
-        return view('ranking', $inf);
+        $users = Score::page($lang);
+        $langs = Repos::select('lang')->distinct()->get();
+        return view('ranking', compact(['users', 'langs']));
     }
 
     /**

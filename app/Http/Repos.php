@@ -9,6 +9,7 @@ class Repos extends Model
 {
     private $stars;
     public $star_count;
+    private $repos;
 
     public function __construct($json_stars)
     {
