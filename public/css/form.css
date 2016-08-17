@@ -51,13 +51,13 @@ body{
     background-attachment: fixed;
 }
 input:not(.botom){
+    color: white;
     text-align: center;
     border-radius: 7px; 
     height: 30px; 
     background: #979C9C; 
     border: 0px; 
     opacity: 0.5; 
-    color: white;
 }
 .info{
     color:white;

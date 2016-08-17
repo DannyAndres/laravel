@@ -43,11 +43,11 @@
                 <!--FORMULARIO-->
                 <form action="./score" method="post" name="frm">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">    
-                <i class="fa fa-user icon" aria-hidden="true"> 1er Usuario </i>
-                <input type="text" name="username"/>
+                <i class="fa fa-user icon" aria-hidden="true"></i>
+                <input placeholder="Primer Usuario" type="text" name="username"/>
                 <br /><br />
-                <i class="fa fa-user icon" aria-hidden="true"> 2do Usuario</i>
-                <input type="text" name="username2"/>
+                <i class="fa fa-user icon" aria-hidden="true"></i>
+                <input placeholder="Segundo Usuario"  type="text" name="username2"/>
                 <br /><br />
                 <input class="botom" type="submit" name="Enviar" value="Listo!" class="boton"/>
                 </form>
