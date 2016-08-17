@@ -1,6 +1,7 @@
 
 # Github Score
 
+![Alt text](/imge.png?raw=true "GithubScore")
 
 This program takes two users on github and then calculates a score based on user events , that score is used to compare it to other users github and show who is the winner.
 
